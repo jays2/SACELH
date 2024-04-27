@@ -24,13 +24,13 @@ El calculador de préstamos permite a los usuarios ingresar el monto del présta
 ```
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `calculate_monthly_payment`(
-  IN principal DECIMAL(15,10),
-  IN annual_interest DECIMAL(15,10),
+  IN principal DOUBLE,
+  IN annual_interest DOUBLE,
   IN term INT,
-  OUT monthly_payment DECIMAL(15,10)
+  OUT monthly_payment DOUBLE
 )
 BEGIN
-  DECLARE monthly_interest DECIMAL(15,10);
+  DECLARE monthly_interest DOUBLE;
 
   SET monthly_interest = annual_interest / 12 / 100;
 
