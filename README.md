@@ -23,7 +23,7 @@ El calculador de préstamos permite a los usuarios ingresar el monto del présta
 5. Ejecuta en MySQL el siguiente store procedure: 
 ```
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `calculate_monthly_payment5`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `calculate_monthly_payment`(
   IN principal DECIMAL(15,10),
   IN annual_interest DECIMAL(15,10),
   IN term INT,
