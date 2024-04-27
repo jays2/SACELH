@@ -4,8 +4,8 @@ require_once('../Model/LoanModel.php');
 class LoanController {
     public function calculateLoan($principal, $annualInterest, $term) {
         $model = new LoanModel();
-        $result = $model->calculateMonthlyPayment($principal, $annualInterest, $term);
-        header("Location: ../View/loan_form.php?result=$result");
+        $result = $model->calculateMonthlyPaymentSP($principal, $annualInterest, $term);
+        header("Location: ../View/loan_form.php?result=$result&montopresta=$principal&tasaInteres=$annualInterest&plazo=$term");
         exit();
     }
 }
